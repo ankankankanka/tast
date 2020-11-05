@@ -1,0 +1,6 @@
+package main
+import "fmt"
+//练习题
+func main (){
+	fmt.Println("性别\t年龄\t籍贯\t地址\n男\t18\t北京\t北京")
+}
