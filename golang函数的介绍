@@ -1,0 +1,45 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+//演示golang中基本数据练习转成string使用
+func main() {
+	var num1  = 99
+	var num2  = 23.456
+	var b = true
+	var mychar byte = 'h'
+	var str string //空的str
+
+	//使用的一种方式转换 fmt.Sprintf方法
+
+	str = fmt.Sprintf("%d",num1)
+	fmt.Printf("str type %Tstr=%q",str,str)
+
+	str = fmt.Sprintf("%f",num2)
+	fmt.Printf("str type %Tstr=%q\n",str,str)
+
+	str = fmt.Sprintf("%d",b )
+	fmt.Printf("str type %Tstr=%q\n",str,str)
+
+	str = fmt.Sprintf("%d",mychar)
+	fmt.Printf("str type %Tstr=%q\n",str,str)
+
+	//第二种方式strconv函数
+	var num3  = 99
+	var num4  = 23.456
+	var b2  = true
+
+	str = strconv.FormatInt(int64(num3),10)
+	fmt.Printf("str type %t str=%q\n",str ,str)
+	//strconv.FormatFloat(num4'f',10,64)
+	//说明，'f' 格式10 表示小数位保留10位 64 表示这个小数是float64
+	str = strconv.FormatFloat(num4, 'f',10,64)
+	fmt.Sprintf("str type %T str=%q\n",str,str)
+
+	str =strconv.FormatBool(b2)
+	fmt.Printf("str type %T str=%q\n",str,str)
+
+}
