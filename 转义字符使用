@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+//演示转义字符的使用
+
+func main() {
+	fmt.Println("tom\tjack")
+
+	fmt.Println("hello\nworld")
+	fmt.Println("c:\\users\\desktop")
+	fmt.Println("tom说\"i love you\"")
+	//\r 回车从当前行最前面开始输出覆盖掉以前内容
+	fmt.Println("天龙八部雪山飞狐\r张飞")
+}
