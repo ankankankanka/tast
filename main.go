@@ -1,17 +1,81 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-func main (){
+)
 
-	//假如还有97天放假，问 xx个星期零几天
-	var days int = 97
-	var week int = days / 7
-	var day int = days % 7
-	fmt.Printf("%d个星期零%的\n",week,day)
+func main() {
 
-	//定义一个变量保存华氏温度，华氏温度转换摄氏温度的公式为
-	//5/9*华氏温度—100，请求出华氏温度对应的摄氏温度
-	var sheshi float32 = 5.0 / 9 *(huashi -100)
-	fmt.Printf("%v 对应的摄氏温度=%v\n",huashi,sheshi)
+	//参加百米运动会，如果用时8秒以内进入决赛
+	//否则提示淘汰，并且根据性别提示进入男子组或女子组，【可以让学员先联系一下】
+	//输入成绩和性别
+	//
+	//分析思路
+	//1，定义一个变量，来接收跑步使用秒数  float64
+
+	var second float64
+
+	fmt.Println("请输入秒数")
+	fmt.Scanln(&second)
+
+	if second <= 8 {
+		//进入决赛
+		var gender string
+		fmt.Println("请输入性别")
+		fmt.Scanln(&gender)
+		if gender == "男" {
+			fmt.Println("进入决赛的男子组")
+		}else {
+			fmt.Println("进入决赛的女子组")
+		}
+	/*
+	出票系统，根据淡旺季的月份和年龄。打印票价（考虑学生先做）
+
+	4_10 旺季
+	成人(18-60): 60
+	儿童（<18）：半价
+	老人（>60）:1/3
+
+	淡季
+	成人 40
+	其他 20
+	 */
+	//分析思路
+	//1，month age 的两个变量 byte
+	//2，使用嵌套分支
+
+	var month byte
+	var age byte
+	var price float64 = 60
+	fmt.Println("请输入游玩月份")
+	fmt.Scanln(&month)
+	fmt.Println("请输入游客的年龄")
+	fmt.Scanln(&age)
+
+	if month >= 4 && month <=10 {
+		if age > 60 {
+			fmt.Printf("票价：%v", month, price / 3, age)
+		}else if age >= 18 {
+			fmt.Printf("票价：%v",month,price, age)
+		}else {
+			fmt.Printf("票价：%",month,price / 2, age)
+		}
+	}else {
+		//淡季
+		if age >= 18 && age < 60 {
+			fmt.Println("票价 40")
+		}else {
+			fmt.Println("票价 20")
+		}
+	}
+
+
+
+
+
+
+	}
+
+
 }
