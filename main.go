@@ -1,24 +1,17 @@
 package main
 
 import "fmt"
-func main() {
-	//演示一把 & 和 * 的使用
 
-	a := 100
-	fmt.Println("a 的地址=",&a)
+func main (){
 
-	var ptr *int = &a
-	fmt.Println("ptr 指向的值是=",*ptr)
+	//假如还有97天放假，问 xx个星期零几天
+	var days int = 97
+	var week int = days / 7
+	var day int = days % 7
+	fmt.Printf("%d个星期零%的\n",week,day)
 
-	var n int
-	var i int = 10
-	var j int = 12
-	//传统的三元运算
-	//n = i > j ? i :j
-	if i > j {
-		n = i
-	} else {
-		n = j
-	}
-	fmt.Println("n=",n)
+	//定义一个变量保存华氏温度，华氏温度转换摄氏温度的公式为
+	//5/9*华氏温度—100，请求出华氏温度对应的摄氏温度
+	var sheshi float32 = 5.0 / 9 *(huashi -100)
+	fmt.Printf("%v 对应的摄氏温度=%v\n",huashi,sheshi)
 }
