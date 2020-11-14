@@ -1,81 +1,31 @@
+
 package main
 
-import (
-	"fmt"
-
-)
+import "fmt"
 
 func main() {
-
-	//参加百米运动会，如果用时8秒以内进入决赛
-	//否则提示淘汰，并且根据性别提示进入男子组或女子组，【可以让学员先联系一下】
-	//输入成绩和性别
+	//案例
+	//请编写一个程序，该程序可以接收一个字符，比如，a,b,c,d,e,f,g,
+	//a表示星期一，b表示星期二，根据用户的输入显示相依的信息
+	//
+	//要求使用；switch 语句完成
 	//
 	//分析思路
-	//1，定义一个变量，来接收跑步使用秒数  float64
+	//1，定义一个变量接收字符
+	//2，使用switch完成
+	var key byte
+	fmt.Println("请输入一个字符 a,b,c,d,e,f,g,")
+	fmt.Scanf("%c",&key)
 
-	var second float64
-
-	fmt.Println("请输入秒数")
-	fmt.Scanln(&second)
-
-	if second <= 8 {
-		//进入决赛
-		var gender string
-		fmt.Println("请输入性别")
-		fmt.Scanln(&gender)
-		if gender == "男" {
-			fmt.Println("进入决赛的男子组")
-		}else {
-			fmt.Println("进入决赛的女子组")
-		}
-	/*
-	出票系统，根据淡旺季的月份和年龄。打印票价（考虑学生先做）
-
-	4_10 旺季
-	成人(18-60): 60
-	儿童（<18）：半价
-	老人（>60）:1/3
-
-	淡季
-	成人 40
-	其他 20
-	 */
-	//分析思路
-	//1，month age 的两个变量 byte
-	//2，使用嵌套分支
-
-	var month byte
-	var age byte
-	var price float64 = 60
-	fmt.Println("请输入游玩月份")
-	fmt.Scanln(&month)
-	fmt.Println("请输入游客的年龄")
-	fmt.Scanln(&age)
-
-	if month >= 4 && month <=10 {
-		if age > 60 {
-			fmt.Printf("票价：%v", month, price / 3, age)
-		}else if age >= 18 {
-			fmt.Printf("票价：%v",month,price, age)
-		}else {
-			fmt.Printf("票价：%",month,price / 2, age)
-		}
-	}else {
-		//淡季
-		if age >= 18 && age < 60 {
-			fmt.Println("票价 40")
-		}else {
-			fmt.Println("票价 20")
-		}
-	}
-
-
-
-
-
+	switch key {
+	case 'a':
+		fmt.Println("周一，猴子穿新衣")
+	case 'b':
+		fmt.Println("周二，猴子当小二")
+	case 'c':
+		fmt.Println("周三，猴子爬雪山")
+	default :
+		fmt.Println("输入有误...")
 
 	}
-
-
 }
