@@ -3,24 +3,26 @@ package main
 import "fmt"
 
 func main() {
-	//编写一个程序，可以输入人的年龄，如果该同志的年龄大于18岁，要对
-	//自己的行为负责，否则，输出"你的年龄不大这次放过你了"
+	//编写程序，声明2个int32形变量并赋值，判断两数之和，如果大于等于50，打印'hello world'
 
-	//思路分析
-	//1.年龄 ==> var age int
-	//2.fmt.scaln接收
-	//3.if ---else
+//	分析
+//	1.变量
+//	2.单分支
 
-	//代码
-	var age int
-	fmt.Println("请输入年龄：")
-	fmt.Scanln(&age)
+	var n1 int32 =10
+	var n2 int32 = 50
+	if n1 + n2 > 50{
+		fmt.Println("hello world")
+	}
 
-	if age > 18{
-		fmt.Scanln("你年龄大于18")
-	}else {
-		fmt.Println("你的年龄不大这次放过你了")
-	}//if双分支基本操作
+	//编写程序，声明2个float64型变量并赋值，判断第一个数大于10.0
+	//且第2个数小于20.0 打印俩数之和
+
+	var n3 float64 = 11.0
+	var n4 float64 = 17.0
+	if n3 > 10.0 && n4 < 20.0 {
+		fmt.Println("和=",(n3 + n4))
+
+	}
 
 }
-
